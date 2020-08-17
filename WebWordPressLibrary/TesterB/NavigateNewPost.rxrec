@@ -1,12 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <recordtable
-embeddedrepository="false"
+embeddedrepository="False"
 id="b0235fd3-422d-452e-8d02-133e4dffd6e4"
 mode="Desktop"
 rxversion="9.0">
-	<name>
-		NavigateNewPost
-	</name>
 	<repeatcount>
 		1
 	</repeatcount>
@@ -24,18 +21,16 @@ rxversion="9.0">
 	</useDefaultItemLogging>
 	<codegen
 	classname="NavigateNewPost"
-	namespace="WebWordPressLibrary">
+	namespace="WebWordPressLibrary.TesterB">
 	</codegen>
 	<variables>
 	</variables>
 	<recorditems>
 		<invokeactionrecorditem
 		action="EnsureVisible"
-		actiontype="Adaptor"
 		enabled="True"
 		optional="False"
-		searchpropertyid="44f94179-6064-4593-bddb-0f5cebd742d6"
-		varname="">
+		searchpropertyid="44f94179-6064-4593-bddb-0f5cebd742d6">
 			<comment>
 			</comment>
 			<bindings>
@@ -61,7 +56,8 @@ rxversion="9.0">
 		optional="False"
 		searchpropertyid="0001045e-6b7a-48cc-b3e3-a7a9edced8d4"
 		sx="2065"
-		sy="176">
+		sy="176"
+		warnoutofbounds="False">
 			<comment>
 			</comment>
 			<bindings>
@@ -683,7 +679,8 @@ Gh9GYCiqFytqLmQteiFycsrBTzgeoopAf//Z
 		optional="False"
 		searchpropertyid="1d51050f-a19a-4bb6-9c0a-353de075c04d"
 		sx="2227"
-		sy="178">
+		sy="178"
+		warnoutofbounds="False">
 			<comment>
 			</comment>
 			<bindings>
@@ -1323,7 +1320,8 @@ gAooooAKKKKACiiigAooooAKKKKACiiigD//2Q==
 		optional="False"
 		searchpropertyid="993c786b-5780-4427-ac33-059b3afa2aa2"
 		sx="2221"
-		sy="222">
+		sy="222"
+		warnoutofbounds="False">
 			<comment>
 			</comment>
 			<bindings>
@@ -1964,8 +1962,8 @@ KKKACiiigAooooAKKKKACiiigAooooAKKKKAP//Z
 	<repository
 	id="b68c5ae7-5d54-49e3-893c-ecd04dbce34b"
 	name="WebWordPressLibraryRepository"
-	relativepath="WebWordPressLibraryRepository.rxrep"
-	rxversion="6.0">
+	relativepath="..\WebWordPressLibraryRepository.rxrep"
+	rxversion="9.0">
 		<codegen
 		classname="WebWordPressLibraryRepository"
 		namespace="WebWordPressLibrary">

@@ -4,9 +4,6 @@ embeddedrepository="False"
 id="5c0438e0-4aa8-4cce-9d0d-0adda576c6a7"
 mode="Desktop"
 rxversion="9.0">
-	<name>
-		PublishNewPost
-	</name>
 	<repeatcount>
 		1
 	</repeatcount>
@@ -24,7 +21,7 @@ rxversion="9.0">
 	</useDefaultItemLogging>
 	<codegen
 	classname="PublishNewPost"
-	namespace="WebWordPressLibrary">
+	namespace="WebWordPressLibrary.TesterB">
 	</codegen>
 	<variables>
 		<var
@@ -1305,8 +1302,8 @@ ooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//9k=
 	<repository
 	id="b68c5ae7-5d54-49e3-893c-ecd04dbce34b"
 	name="WebWordPressLibraryRepository"
-	relativepath="WebWordPressLibraryRepository.rxrep"
-	rxversion="7.1">
+	relativepath="..\WebWordPressLibraryRepository.rxrep"
+	rxversion="9.0">
 		<codegen
 		classname="WebWordPressLibraryRepository"
 		namespace="WebWordPressLibrary">

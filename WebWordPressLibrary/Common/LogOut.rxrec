@@ -1,12 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <recordtable
-embeddedrepository="false"
+embeddedrepository="False"
 id="f297eb3c-19cb-4db4-917c-e476ae456167"
 mode="Desktop"
 rxversion="9.0">
-	<name>
-		LogOut
-	</name>
 	<repeatcount>
 		1
 	</repeatcount>
@@ -24,7 +21,7 @@ rxversion="9.0">
 	</useDefaultItemLogging>
 	<codegen
 	classname="LogOut"
-	namespace="WebWordPressLibrary">
+	namespace="WebWordPressLibrary.Common">
 	</codegen>
 	<variables>
 	</variables>
@@ -39,7 +36,8 @@ rxversion="9.0">
 		optional="False"
 		searchpropertyid="18a523b7-5073-448e-9b46-15a0955173c2"
 		sx="71"
-		sy="129">
+		sy="129"
+		warnoutofbounds="False">
 			<comment>
 			</comment>
 			<bindings>
@@ -600,7 +598,8 @@ MD0FGB6CiigAwPQUYHoKKKADA9BRgegoooAMD0FGB6CiigD/2Q==
 		optional="False"
 		searchpropertyid="62a24fe2-bd0b-4197-b64d-26f70857ac42"
 		sx="3488"
-		sy="93">
+		sy="93"
+		warnoutofbounds="False">
 			<comment>
 			</comment>
 			<bindings>
@@ -1153,7 +1152,8 @@ UUAFFFFABRRRQA1uopKKKACiiigD/9k=
 		optional="False"
 		searchpropertyid="68f7e75a-e13d-4f02-b329-031268d14226"
 		sx="3493"
-		sy="243">
+		sy="243"
+		warnoutofbounds="False">
 			<comment>
 			</comment>
 			<bindings>
@@ -1633,8 +1633,8 @@ LZ/88f8Ax5v8aP7Fs/8Anj/483+NatFAGV/Ytn/zx/8AHm/xpraNaDH7n/x4/wCNa9Nft9aAMn+x
 	<repository
 	id="b68c5ae7-5d54-49e3-893c-ecd04dbce34b"
 	name="WebWordPressLibraryRepository"
-	relativepath="WebWordPressLibraryRepository.rxrep"
-	rxversion="6.0">
+	relativepath="..\WebWordPressLibraryRepository.rxrep"
+	rxversion="9.0">
 		<codegen
 		classname="WebWordPressLibraryRepository"
 		namespace="WebWordPressLibrary">

@@ -20,9 +20,9 @@ using Ranorex.Core;
 using Ranorex.Core.Repository;
 using Ranorex.Core.Testing;
 
-namespace WebWordPressLibrary
+namespace WebWordPressLibrary.Common
 {
-	public partial class PublishNewPost
+	public partial class Login
 	{
 		/// <summary>
 		/// This method gets called right after the recording has been started.

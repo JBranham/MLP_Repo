@@ -20,38 +20,49 @@ using Ranorex.Core;
 using Ranorex.Core.Testing;
 using Ranorex.Core.Repository;
 
-namespace WebWordPressLibrary
+namespace WebWordPressLibrary.TesterA
 {
 #pragma warning disable 0436 //(CS0436) The type 'type' in 'assembly' conflicts with the imported type 'type2' in 'assembly'. Using the type defined in 'assembly'.
     /// <summary>
-    ///The LogOut recording.
+    ///The DeletePost recording.
     /// </summary>
-    [TestModule("f297eb3c-19cb-4db4-917c-e476ae456167", ModuleType.Recording, 1)]
-    public partial class LogOut : ITestModule
+    [TestModule("d3c9939f-4a9c-4c66-b0ba-0a26ae62285f", ModuleType.Recording, 1)]
+    public partial class DeletePost : ITestModule
     {
         /// <summary>
-        /// Holds an instance of the WebWordPressLibraryRepository repository.
+        /// Holds an instance of the global::WebWordPressLibrary.WebWordPressLibraryRepository repository.
         /// </summary>
-        public static WebWordPressLibraryRepository repo = WebWordPressLibraryRepository.Instance;
+        public static global::WebWordPressLibrary.WebWordPressLibraryRepository repo = global::WebWordPressLibrary.WebWordPressLibraryRepository.Instance;
 
-        static LogOut instance = new LogOut();
+        static DeletePost instance = new DeletePost();
 
         /// <summary>
         /// Constructs a new instance.
         /// </summary>
-        public LogOut()
+        public DeletePost()
         {
+            varPostURL = "http://webtest.ranorex.org/";
         }
 
         /// <summary>
         /// Gets a static instance of this recording.
         /// </summary>
-        public static LogOut Instance
+        public static DeletePost Instance
         {
             get { return instance; }
         }
 
 #region Variables
+
+        /// <summary>
+        /// Gets or sets the value of variable varPostURL.
+        /// </summary>
+        [TestVariable("4bc16de1-50a7-44d5-afb2-6d1c869096bc")]
+        public string varPostURL
+        {
+            get { return repo.varPostURL; }
+            set { repo.varPostURL = value; }
+        }
 
 #endregion
 
@@ -79,19 +90,23 @@ namespace WebWordPressLibrary
 
             Init();
 
-            Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'WordPress_Demo.Dashboard' at Center.", repo.WordPress_Demo.DashboardInfo, new RecordItemIndex(0));
-            repo.WordPress_Demo.Dashboard.Click();
+            Report.Log(ReportLevel.Info, "Invoke action", "Invoking Navigate(variable $varPostURL) on item 'WordPress_Demo'.", repo.WordPress_Demo.SelfInfo, new RecordItemIndex(0));
+            repo.WordPress_Demo.Self.Navigate(varPostURL);
+            Delay.Milliseconds(0);
+            
+            Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'WordPress_Demo.RecentPost' at Center.", repo.WordPress_Demo.RecentPostInfo, new RecordItemIndex(1));
+            repo.WordPress_Demo.RecentPost.Click();
             Delay.Milliseconds(200);
             
-            Report.Log(ReportLevel.Info, "Mouse", "Mouse None Move item 'WordPress_Demo.MyAccount1' at Center.", repo.WordPress_Demo.MyAccount1Info, new RecordItemIndex(1));
-            repo.WordPress_Demo.MyAccount1.MoveTo();
+            Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'WordPress_Demo.EditPost' at Center.", repo.WordPress_Demo.EditPostInfo, new RecordItemIndex(2));
+            repo.WordPress_Demo.EditPost.Click();
             Delay.Milliseconds(200);
             
-            Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'WordPress_Demo.LogOut' at Center.", repo.WordPress_Demo.LogOutInfo, new RecordItemIndex(2));
-            repo.WordPress_Demo.LogOut.Click();
+            Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'WordPress_Demo.MoveToTrash' at Center.", repo.WordPress_Demo.MoveToTrashInfo, new RecordItemIndex(3));
+            repo.WordPress_Demo.MoveToTrash.Click();
             Delay.Milliseconds(200);
             
-            Report.Log(ReportLevel.Info, "Delay", "Waiting for 2s.", new RecordItemIndex(3));
+            Report.Log(ReportLevel.Info, "Delay", "Waiting for 2s.", new RecordItemIndex(4));
             Delay.Duration(2000, false);
             
         }

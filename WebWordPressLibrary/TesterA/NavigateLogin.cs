@@ -20,38 +20,51 @@ using Ranorex.Core;
 using Ranorex.Core.Testing;
 using Ranorex.Core.Repository;
 
-namespace WebWordPressLibrary
+namespace WebWordPressLibrary.TesterA
 {
 #pragma warning disable 0436 //(CS0436) The type 'type' in 'assembly' conflicts with the imported type 'type2' in 'assembly'. Using the type defined in 'assembly'.
     /// <summary>
-    ///The NavigateNewPost recording.
+    ///The NavigateLogin recording.
     /// </summary>
-    [TestModule("b0235fd3-422d-452e-8d02-133e4dffd6e4", ModuleType.Recording, 1)]
-    public partial class NavigateNewPost : ITestModule
+    [TestModule("b4cae198-64a2-4954-82aa-3fe351ea32b7", ModuleType.Recording, 1)]
+    public partial class NavigateLogin : ITestModule
     {
         /// <summary>
-        /// Holds an instance of the WebWordPressLibraryRepository repository.
+        /// Holds an instance of the global::WebWordPressLibrary.WebWordPressLibraryRepository repository.
         /// </summary>
-        public static WebWordPressLibraryRepository repo = WebWordPressLibraryRepository.Instance;
+        public static global::WebWordPressLibrary.WebWordPressLibraryRepository repo = global::WebWordPressLibrary.WebWordPressLibraryRepository.Instance;
 
-        static NavigateNewPost instance = new NavigateNewPost();
+        static NavigateLogin instance = new NavigateLogin();
 
         /// <summary>
         /// Constructs a new instance.
         /// </summary>
-        public NavigateNewPost()
+        public NavigateLogin()
         {
+            varLoginURL = "http://webtest.ranorex.org/wp-admin/edit.php";
         }
 
         /// <summary>
         /// Gets a static instance of this recording.
         /// </summary>
-        public static NavigateNewPost Instance
+        public static NavigateLogin Instance
         {
             get { return instance; }
         }
 
 #region Variables
+
+        string _varLoginURL;
+
+        /// <summary>
+        /// Gets or sets the value of variable varLoginURL.
+        /// </summary>
+        [TestVariable("85c891b6-0dfe-44fa-8217-27af232359e7")]
+        public string varLoginURL
+        {
+            get { return _varLoginURL; }
+            set { _varLoginURL = value; }
+        }
 
 #endregion
 
@@ -79,21 +92,9 @@ namespace WebWordPressLibrary
 
             Init();
 
-            Report.Log(ReportLevel.Info, "Invoke action", "Invoking EnsureVisible() on item 'WordPress_Demo.Posts'.", repo.WordPress_Demo.PostsInfo, new RecordItemIndex(0));
-            repo.WordPress_Demo.Posts.EnsureVisible();
+            Report.Log(ReportLevel.Info, "Set value", "Setting attribute PageUrl to '$varLoginURL' on item 'WordPress_Demo'.", repo.WordPress_Demo.SelfInfo, new RecordItemIndex(0));
+            repo.WordPress_Demo.Self.Element.SetAttributeValue("PageUrl", varLoginURL);
             Delay.Milliseconds(0);
-            
-            Report.Log(ReportLevel.Info, "Mouse", "Mouse None Move item 'WordPress_Demo.Posts' at Center.", repo.WordPress_Demo.PostsInfo, new RecordItemIndex(1));
-            repo.WordPress_Demo.Posts.MoveTo();
-            Delay.Milliseconds(200);
-            
-            Report.Log(ReportLevel.Info, "Mouse", "Mouse None Move item 'WordPress_Demo.AllPosts' at Center.", repo.WordPress_Demo.AllPostsInfo, new RecordItemIndex(2));
-            repo.WordPress_Demo.AllPosts.MoveTo();
-            Delay.Milliseconds(200);
-            
-            Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'WordPress_Demo.AddNew' at Center.", repo.WordPress_Demo.AddNewInfo, new RecordItemIndex(3));
-            repo.WordPress_Demo.AddNew.Click();
-            Delay.Milliseconds(200);
             
         }
 

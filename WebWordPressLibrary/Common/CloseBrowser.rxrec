@@ -1,12 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <recordtable
-embeddedrepository="false"
+embeddedrepository="False"
 id="13e51bc5-44c7-4f36-89b7-c187dc391f75"
 mode="Global"
 rxversion="9.0">
-	<name>
-		CloseBrowser
-	</name>
 	<repeatcount>
 		1
 	</repeatcount>
@@ -24,7 +21,7 @@ rxversion="9.0">
 	</useDefaultItemLogging>
 	<codegen
 	classname="CloseBrowser"
-	namespace="WebWordPressLibrary">
+	namespace="WebWordPressLibrary.Common">
 	</codegen>
 	<variables>
 	</variables>
@@ -51,8 +48,8 @@ rxversion="9.0">
 	<repository
 	id="b68c5ae7-5d54-49e3-893c-ecd04dbce34b"
 	name="WebWordPressLibraryRepository"
-	relativepath="WebWordPressLibraryRepository.rxrep"
-	rxversion="6.0">
+	relativepath="..\WebWordPressLibraryRepository.rxrep"
+	rxversion="9.0">
 		<codegen
 		classname="WebWordPressLibraryRepository"
 		namespace="WebWordPressLibrary">

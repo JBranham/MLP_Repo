@@ -20,51 +20,38 @@ using Ranorex.Core;
 using Ranorex.Core.Testing;
 using Ranorex.Core.Repository;
 
-namespace WebWordPressLibrary
+namespace WebWordPressLibrary.TesterB
 {
 #pragma warning disable 0436 //(CS0436) The type 'type' in 'assembly' conflicts with the imported type 'type2' in 'assembly'. Using the type defined in 'assembly'.
     /// <summary>
-    ///The OpenBrowser recording.
+    ///The NavigateNewPost recording.
     /// </summary>
-    [TestModule("1a79ad03-9369-4d42-8d3a-34a236d1ed1d", ModuleType.Recording, 1)]
-    public partial class OpenBrowser : ITestModule
+    [TestModule("b0235fd3-422d-452e-8d02-133e4dffd6e4", ModuleType.Recording, 1)]
+    public partial class NavigateNewPost : ITestModule
     {
         /// <summary>
-        /// Holds an instance of the WebWordPressLibraryRepository repository.
+        /// Holds an instance of the global::WebWordPressLibrary.WebWordPressLibraryRepository repository.
         /// </summary>
-        public static WebWordPressLibraryRepository repo = WebWordPressLibraryRepository.Instance;
+        public static global::WebWordPressLibrary.WebWordPressLibraryRepository repo = global::WebWordPressLibrary.WebWordPressLibraryRepository.Instance;
 
-        static OpenBrowser instance = new OpenBrowser();
+        static NavigateNewPost instance = new NavigateNewPost();
 
         /// <summary>
         /// Constructs a new instance.
         /// </summary>
-        public OpenBrowser()
+        public NavigateNewPost()
         {
-            varLoginURL = "http://bitly.com/wp_demo";
         }
 
         /// <summary>
         /// Gets a static instance of this recording.
         /// </summary>
-        public static OpenBrowser Instance
+        public static NavigateNewPost Instance
         {
             get { return instance; }
         }
 
 #region Variables
-
-        string _varLoginURL;
-
-        /// <summary>
-        /// Gets or sets the value of variable varLoginURL.
-        /// </summary>
-        [TestVariable("9fe5e6cf-d2fe-450b-abbe-23f245a46a9e")]
-        public string varLoginURL
-        {
-            get { return _varLoginURL; }
-            set { _varLoginURL = value; }
-        }
 
 #endregion
 
@@ -92,15 +79,21 @@ namespace WebWordPressLibrary
 
             Init();
 
-            Report.Log(ReportLevel.Info, "Website", "Opening web site 'http://webtest.ranorex.org' with browser 'IE' in maximized mode.", new RecordItemIndex(0));
-            Host.Current.OpenBrowser("http://webtest.ranorex.org", "IE", "", false, true, false, false, false, true);
+            Report.Log(ReportLevel.Info, "Invoke action", "Invoking EnsureVisible() on item 'WordPress_Demo.Posts'.", repo.WordPress_Demo.PostsInfo, new RecordItemIndex(0));
+            repo.WordPress_Demo.Posts.EnsureVisible();
             Delay.Milliseconds(0);
             
-            Report.Screenshot(ReportLevel.Info, "User", "", repo.WordPress_Demo.Self, false, new RecordItemIndex(1));
+            Report.Log(ReportLevel.Info, "Mouse", "Mouse None Move item 'WordPress_Demo.Posts' at Center.", repo.WordPress_Demo.PostsInfo, new RecordItemIndex(1));
+            repo.WordPress_Demo.Posts.MoveTo();
+            Delay.Milliseconds(200);
             
-            Report.Log(ReportLevel.Info, "Invoke action", "Invoking Navigate(variable $varLoginURL) on item 'WordPress_Demo'.", repo.WordPress_Demo.SelfInfo, new RecordItemIndex(2));
-            repo.WordPress_Demo.Self.Navigate(varLoginURL);
-            Delay.Milliseconds(0);
+            Report.Log(ReportLevel.Info, "Mouse", "Mouse None Move item 'WordPress_Demo.AllPosts' at Center.", repo.WordPress_Demo.AllPostsInfo, new RecordItemIndex(2));
+            repo.WordPress_Demo.AllPosts.MoveTo();
+            Delay.Milliseconds(200);
+            
+            Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'WordPress_Demo.AddNew' at Center.", repo.WordPress_Demo.AddNewInfo, new RecordItemIndex(3));
+            repo.WordPress_Demo.AddNew.Click();
+            Delay.Milliseconds(200);
             
         }
 

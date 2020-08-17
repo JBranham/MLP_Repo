@@ -1,12 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <recordtable
-embeddedrepository="false"
+embeddedrepository="False"
 id="fc856961-94e1-4ead-8db8-e0eac61124f6"
 mode="Global"
 rxversion="9.0">
-	<name>
-		ValidatePost
-	</name>
 	<repeatcount>
 		1
 	</repeatcount>
@@ -24,7 +21,7 @@ rxversion="9.0">
 	</useDefaultItemLogging>
 	<codegen
 	classname="ValidatePost"
-	namespace="WebWordPressLibrary">
+	namespace="WebWordPressLibrary.TesterB">
 	</codegen>
 	<variables>
 		<var
@@ -46,11 +43,9 @@ rxversion="9.0">
 	<recorditems>
 		<invokeactionrecorditem
 		action="Navigate"
-		actiontype="Adaptor"
 		enabled="True"
 		optional="False"
-		searchpropertyid="5d5f4ad5-0324-43ef-8932-85f94ed9f60b"
-		varname="">
+		searchpropertyid="5d5f4ad5-0324-43ef-8932-85f94ed9f60b">
 			<comment>
 			</comment>
 			<bindings>
@@ -69,7 +64,7 @@ rxversion="9.0">
 				id="ea213462-6fa5-4d2e-a2e6-6ec5ca067952"
 				variable="varPostURL">
 					<argvaluetype>
-						<![CDATA[System.String, mscorlib, Culture=neutral, PublicKeyToken=b77a5c561934e089]]>
+						System.String
 					</argvaluetype>
 					<argvalue>
 					</argvalue>
@@ -449,11 +444,9 @@ rxversion="9.0">
 		</validationitem>
 		<invokeactionrecorditem
 		action="EnsureVisible"
-		actiontype="Adaptor"
 		enabled="True"
 		optional="False"
-		searchpropertyid="c408002e-f677-4cfe-bf3a-9432cfada20c"
-		varname="">
+		searchpropertyid="c408002e-f677-4cfe-bf3a-9432cfada20c">
 			<comment>
 			</comment>
 			<bindings>
@@ -1545,11 +1538,9 @@ rxversion="9.0">
 		</validationitem>
 		<invokeactionrecorditem
 		action="EnsureVisible"
-		actiontype="Adaptor"
 		enabled="True"
 		optional="False"
-		searchpropertyid="845bf906-77fc-4408-9442-82aa6f8e2cb9"
-		varname="">
+		searchpropertyid="845bf906-77fc-4408-9442-82aa6f8e2cb9">
 			<comment>
 			</comment>
 			<bindings>
@@ -2276,8 +2267,8 @@ rxversion="9.0">
 	<repository
 	id="b68c5ae7-5d54-49e3-893c-ecd04dbce34b"
 	name="WebWordPressLibraryRepository"
-	relativepath="WebWordPressLibraryRepository.rxrep"
-	rxversion="6.0">
+	relativepath="..\WebWordPressLibraryRepository.rxrep"
+	rxversion="9.0">
 		<codegen
 		classname="WebWordPressLibraryRepository"
 		namespace="WebWordPressLibrary">

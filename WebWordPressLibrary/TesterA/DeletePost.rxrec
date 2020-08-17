@@ -1,12 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <recordtable
-embeddedrepository="false"
+embeddedrepository="False"
 id="d3c9939f-4a9c-4c66-b0ba-0a26ae62285f"
 mode="Global"
 rxversion="9.0">
-	<name>
-		DeletePost
-	</name>
 	<repeatcount>
 		1
 	</repeatcount>
@@ -24,7 +21,7 @@ rxversion="9.0">
 	</useDefaultItemLogging>
 	<codegen
 	classname="DeletePost"
-	namespace="WebWordPressLibrary">
+	namespace="WebWordPressLibrary.TesterA">
 	</codegen>
 	<variables>
 		<var
@@ -36,11 +33,9 @@ rxversion="9.0">
 	<recorditems>
 		<invokeactionrecorditem
 		action="Navigate"
-		actiontype="Adaptor"
 		enabled="True"
 		optional="False"
-		searchpropertyid="92f2333b-2014-4fca-82c1-b9d64a948fc0"
-		varname="">
+		searchpropertyid="92f2333b-2014-4fca-82c1-b9d64a948fc0">
 			<comment>
 			</comment>
 			<bindings>
@@ -89,7 +84,7 @@ rxversion="9.0">
 				id="da7c23a2-ee60-4020-86da-9abf756ff8e7"
 				variable="varPostURL">
 					<argvaluetype>
-						<![CDATA[System.String, mscorlib, Culture=neutral, PublicKeyToken=b77a5c561934e089]]>
+						System.String
 					</argvaluetype>
 					<argvalue>
 					</argvalue>
@@ -106,7 +101,8 @@ rxversion="9.0">
 		optional="False"
 		searchpropertyid="b301b0d7-6f09-4eb9-9ccc-1869ca0692bf"
 		sx="0"
-		sy="0">
+		sy="0"
+		warnoutofbounds="False">
 			<comment>
 			</comment>
 			<bindings>
@@ -129,7 +125,8 @@ rxversion="9.0">
 		optional="False"
 		searchpropertyid="46fabb57-d80a-48b6-bfb4-0061c73458af"
 		sx="2355"
-		sy="69">
+		sy="69"
+		warnoutofbounds="False">
 			<comment>
 			</comment>
 			<bindings>
@@ -676,7 +673,8 @@ Ty1IyFznGfeipnDmdzLm5W0j/9k=
 		optional="False"
 		searchpropertyid="b014de52-29cd-4918-85ca-4a5ef7acf08f"
 		sx="3306"
-		sy="445">
+		sy="445"
+		warnoutofbounds="False">
 			<comment>
 			</comment>
 			<bindings>
@@ -1112,8 +1110,8 @@ ooooA//Z
 	<repository
 	id="b68c5ae7-5d54-49e3-893c-ecd04dbce34b"
 	name="WebWordPressLibraryRepository"
-	relativepath="WebWordPressLibraryRepository.rxrep"
-	rxversion="6.0">
+	relativepath="..\WebWordPressLibraryRepository.rxrep"
+	rxversion="9.0">
 		<codegen
 		classname="WebWordPressLibraryRepository"
 		namespace="WebWordPressLibrary">

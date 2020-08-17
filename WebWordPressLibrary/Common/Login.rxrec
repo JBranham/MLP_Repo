@@ -4,9 +4,6 @@ embeddedrepository="False"
 id="efef8546-cad4-403d-96b5-fed425522e81"
 mode="Desktop"
 rxversion="9.0">
-	<name>
-		Login
-	</name>
 	<repeatcount>
 		1
 	</repeatcount>
@@ -24,7 +21,7 @@ rxversion="9.0">
 	</useDefaultItemLogging>
 	<codegen
 	classname="Login"
-	namespace="WebWordPressLibrary">
+	namespace="WebWordPressLibrary.Common">
 	</codegen>
 	<variables>
 		<var
@@ -2446,8 +2443,8 @@ UAFFFFABRRRQB2lFFFIYU5BnP1ptOTv9aAHYHoKMD0FFFABgegowPQUUUAGB6CjA9BRRQAYHoKMD
 	<repository
 	id="b68c5ae7-5d54-49e3-893c-ecd04dbce34b"
 	name="WebWordPressLibraryRepository"
-	relativepath="WebWordPressLibraryRepository.rxrep"
-	rxversion="7.0">
+	relativepath="..\WebWordPressLibraryRepository.rxrep"
+	rxversion="9.0">
 		<codegen
 		classname="WebWordPressLibraryRepository"
 		namespace="WebWordPressLibrary">

@@ -20,7 +20,7 @@ using Ranorex.Core;
 using Ranorex.Core.Testing;
 using Ranorex.Core.Repository;
 
-namespace WebWordPressLibrary
+namespace WebWordPressLibrary.Common
 {
 #pragma warning disable 0436 //(CS0436) The type 'type' in 'assembly' conflicts with the imported type 'type2' in 'assembly'. Using the type defined in 'assembly'.
     /// <summary>
@@ -30,9 +30,9 @@ namespace WebWordPressLibrary
     public partial class Login : ITestModule
     {
         /// <summary>
-        /// Holds an instance of the WebWordPressLibraryRepository repository.
+        /// Holds an instance of the global::WebWordPressLibrary.WebWordPressLibraryRepository repository.
         /// </summary>
-        public static WebWordPressLibraryRepository repo = WebWordPressLibraryRepository.Instance;
+        public static global::WebWordPressLibrary.WebWordPressLibraryRepository repo = global::WebWordPressLibrary.WebWordPressLibraryRepository.Instance;
 
         static Login instance = new Login();
 

@@ -20,9 +20,9 @@ using Ranorex.Core;
 using Ranorex.Core.Repository;
 using Ranorex.Core.Testing;
 
-namespace WebWordPressLibrary
+namespace WebWordPressLibrary.TesterB
 {
-	public partial class GetPostURL
+	public partial class ValidatePost
 	{
 		/// <summary>
 		/// This method gets called right after the recording has been started.

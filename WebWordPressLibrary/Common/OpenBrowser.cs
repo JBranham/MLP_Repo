@@ -20,34 +20,34 @@ using Ranorex.Core;
 using Ranorex.Core.Testing;
 using Ranorex.Core.Repository;
 
-namespace WebWordPressLibrary
+namespace WebWordPressLibrary.Common
 {
 #pragma warning disable 0436 //(CS0436) The type 'type' in 'assembly' conflicts with the imported type 'type2' in 'assembly'. Using the type defined in 'assembly'.
     /// <summary>
-    ///The NavigateLogin recording.
+    ///The OpenBrowser recording.
     /// </summary>
-    [TestModule("b4cae198-64a2-4954-82aa-3fe351ea32b7", ModuleType.Recording, 1)]
-    public partial class NavigateLogin : ITestModule
+    [TestModule("1a79ad03-9369-4d42-8d3a-34a236d1ed1d", ModuleType.Recording, 1)]
+    public partial class OpenBrowser : ITestModule
     {
         /// <summary>
-        /// Holds an instance of the WebWordPressLibraryRepository repository.
+        /// Holds an instance of the global::WebWordPressLibrary.WebWordPressLibraryRepository repository.
         /// </summary>
-        public static WebWordPressLibraryRepository repo = WebWordPressLibraryRepository.Instance;
+        public static global::WebWordPressLibrary.WebWordPressLibraryRepository repo = global::WebWordPressLibrary.WebWordPressLibraryRepository.Instance;
 
-        static NavigateLogin instance = new NavigateLogin();
+        static OpenBrowser instance = new OpenBrowser();
 
         /// <summary>
         /// Constructs a new instance.
         /// </summary>
-        public NavigateLogin()
+        public OpenBrowser()
         {
-            varLoginURL = "http://webtest.ranorex.org/wp-admin/edit.php";
+            varLoginURL = "http://bitly.com/wp_demo";
         }
 
         /// <summary>
         /// Gets a static instance of this recording.
         /// </summary>
-        public static NavigateLogin Instance
+        public static OpenBrowser Instance
         {
             get { return instance; }
         }
@@ -59,7 +59,7 @@ namespace WebWordPressLibrary
         /// <summary>
         /// Gets or sets the value of variable varLoginURL.
         /// </summary>
-        [TestVariable("85c891b6-0dfe-44fa-8217-27af232359e7")]
+        [TestVariable("9fe5e6cf-d2fe-450b-abbe-23f245a46a9e")]
         public string varLoginURL
         {
             get { return _varLoginURL; }
@@ -92,8 +92,14 @@ namespace WebWordPressLibrary
 
             Init();
 
-            Report.Log(ReportLevel.Info, "Set value", "Setting attribute PageUrl to '$varLoginURL' on item 'WordPress_Demo'.", repo.WordPress_Demo.SelfInfo, new RecordItemIndex(0));
-            repo.WordPress_Demo.Self.Element.SetAttributeValue("PageUrl", varLoginURL);
+            Report.Log(ReportLevel.Info, "Website", "Opening web site 'http://webtest.ranorex.org' with browser 'IE' in maximized mode.", new RecordItemIndex(0));
+            Host.Current.OpenBrowser("http://webtest.ranorex.org", "IE", "", false, true, false, false, false, true);
+            Delay.Milliseconds(0);
+            
+            Report.Screenshot(ReportLevel.Info, "User", "", repo.WordPress_Demo.Self, false, new RecordItemIndex(1));
+            
+            Report.Log(ReportLevel.Info, "Invoke action", "Invoking Navigate(variable $varLoginURL) on item 'WordPress_Demo'.", repo.WordPress_Demo.SelfInfo, new RecordItemIndex(2));
+            repo.WordPress_Demo.Self.Navigate(varLoginURL);
             Delay.Milliseconds(0);
             
         }

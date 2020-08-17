@@ -20,27 +20,28 @@ using Ranorex.Core;
 using Ranorex.Core.Testing;
 using Ranorex.Core.Repository;
 
-namespace WebWordPressLibrary
+namespace WebWordPressLibrary.TesterB
 {
 #pragma warning disable 0436 //(CS0436) The type 'type' in 'assembly' conflicts with the imported type 'type2' in 'assembly'. Using the type defined in 'assembly'.
     /// <summary>
-    ///The PublishNewPost recording.
+    ///The ValidatePost recording.
     /// </summary>
-    [TestModule("5c0438e0-4aa8-4cce-9d0d-0adda576c6a7", ModuleType.Recording, 1)]
-    public partial class PublishNewPost : ITestModule
+    [TestModule("fc856961-94e1-4ead-8db8-e0eac61124f6", ModuleType.Recording, 1)]
+    public partial class ValidatePost : ITestModule
     {
         /// <summary>
-        /// Holds an instance of the WebWordPressLibraryRepository repository.
+        /// Holds an instance of the global::WebWordPressLibrary.WebWordPressLibraryRepository repository.
         /// </summary>
-        public static WebWordPressLibraryRepository repo = WebWordPressLibraryRepository.Instance;
+        public static global::WebWordPressLibrary.WebWordPressLibraryRepository repo = global::WebWordPressLibrary.WebWordPressLibraryRepository.Instance;
 
-        static PublishNewPost instance = new PublishNewPost();
+        static ValidatePost instance = new ValidatePost();
 
         /// <summary>
         /// Constructs a new instance.
         /// </summary>
-        public PublishNewPost()
+        public ValidatePost()
         {
+            varPostURL = "http://webtest.ranorex.org/";
             varPostTitle = "Ranorex is awesome!";
             varPostContent = "This is a demo-post automated with Ranorex.";
         }
@@ -48,7 +49,7 @@ namespace WebWordPressLibrary
         /// <summary>
         /// Gets a static instance of this recording.
         /// </summary>
-        public static PublishNewPost Instance
+        public static ValidatePost Instance
         {
             get { return instance; }
         }
@@ -60,7 +61,7 @@ namespace WebWordPressLibrary
         /// <summary>
         /// Gets or sets the value of variable varPostContent.
         /// </summary>
-        [TestVariable("dd605212-15af-4a8f-896c-9dcf52b443fd")]
+        [TestVariable("1a970251-5f1d-4c3b-bd06-dde472fffa3a")]
         public string varPostContent
         {
             get { return _varPostContent; }
@@ -68,9 +69,19 @@ namespace WebWordPressLibrary
         }
 
         /// <summary>
+        /// Gets or sets the value of variable varPostURL.
+        /// </summary>
+        [TestVariable("28d850b1-fee7-4ff4-9734-a496c266a7c2")]
+        public string varPostURL
+        {
+            get { return repo.varPostURL; }
+            set { repo.varPostURL = value; }
+        }
+
+        /// <summary>
         /// Gets or sets the value of variable varPostTitle.
         /// </summary>
-        [TestVariable("d33e7490-f575-476c-8366-4f40a23db2b8")]
+        [TestVariable("d34372ff-4574-4cdb-a34f-a2c11289d06d")]
         public string varPostTitle
         {
             get { return repo.varPostTitle; }
@@ -103,25 +114,32 @@ namespace WebWordPressLibrary
 
             Init();
 
-            Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'WordPress_Demo.Title' at Center.", repo.WordPress_Demo.TitleInfo, new RecordItemIndex(0));
-            repo.WordPress_Demo.Title.Click();
-            Delay.Milliseconds(200);
-            
-            Report.Log(ReportLevel.Info, "Set value", "Setting attribute Value to '$varPostTitle' on item 'WordPress_Demo.Title'.", repo.WordPress_Demo.TitleInfo, new RecordItemIndex(1));
-            repo.WordPress_Demo.Title.Element.SetAttributeValue("Value", varPostTitle);
+            Report.Log(ReportLevel.Info, "Invoke action", "Invoking Navigate(variable $varPostURL) on item 'WordPress_Demo'.", repo.WordPress_Demo.SelfInfo, new RecordItemIndex(0));
+            repo.WordPress_Demo.Self.Navigate(varPostURL);
             Delay.Milliseconds(0);
             
-            Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'WordPress_Demo.Content' at 199;67.", repo.WordPress_Demo.ContentInfo, new RecordItemIndex(2));
-            repo.WordPress_Demo.Content.Click("199;67");
-            Delay.Milliseconds(200);
-            
-            Report.Log(ReportLevel.Info, "Set value", "Setting attribute TagValue to '$varPostContent' on item 'WordPress_Demo.Content'.", repo.WordPress_Demo.ContentInfo, new RecordItemIndex(3));
-            repo.WordPress_Demo.Content.Element.SetAttributeValue("TagValue", varPostContent);
+            Report.Log(ReportLevel.Info, "Validation", "Validating AttributeEqual (InnerText=$varPostTitle) on item 'WordPress_Demo.Pagetitle'.", repo.WordPress_Demo.PagetitleInfo, new RecordItemIndex(1));
+            Validate.AttributeEqual(repo.WordPress_Demo.PagetitleInfo, "InnerText", varPostTitle);
             Delay.Milliseconds(0);
             
-            Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'WordPress_Demo.Publish' at 43;14.", repo.WordPress_Demo.PublishInfo, new RecordItemIndex(4));
-            repo.WordPress_Demo.Publish.Click("43;14");
-            Delay.Milliseconds(200);
+            Report.Log(ReportLevel.Info, "Invoke action", "Invoking EnsureVisible() on item 'WordPress_Demo.Pagetitle'.", repo.WordPress_Demo.PagetitleInfo, new RecordItemIndex(2));
+            repo.WordPress_Demo.Pagetitle.EnsureVisible();
+            Delay.Milliseconds(0);
+            
+            Report.Screenshot(ReportLevel.Info, "User", "", repo.WordPress_Demo.Pagetitle, false, new RecordItemIndex(3));
+            
+            Report.Log(ReportLevel.Info, "Validation", "Validating AttributeEqual (InnerText=$varPostContent) on item 'WordPress_Demo.PostContent'.", repo.WordPress_Demo.PostContentInfo, new RecordItemIndex(4));
+            Validate.AttributeEqual(repo.WordPress_Demo.PostContentInfo, "InnerText", varPostContent);
+            Delay.Milliseconds(0);
+            
+            Report.Log(ReportLevel.Info, "Invoke action", "Invoking EnsureVisible() on item 'WordPress_Demo.PostContent'.", repo.WordPress_Demo.PostContentInfo, new RecordItemIndex(5));
+            repo.WordPress_Demo.PostContent.EnsureVisible();
+            Delay.Milliseconds(0);
+            
+            Report.Screenshot(ReportLevel.Info, "User", "", repo.WordPress_Demo.PostContent, false, new RecordItemIndex(6));
+            
+            Report.Log(ReportLevel.Info, "Delay", "Waiting for 2s.", new RecordItemIndex(7));
+            Delay.Duration(2000, false);
             
         }
 

@@ -20,33 +20,33 @@ using Ranorex.Core;
 using Ranorex.Core.Testing;
 using Ranorex.Core.Repository;
 
-namespace WebWordPressLibrary
+namespace WebWordPressLibrary.Common
 {
 #pragma warning disable 0436 //(CS0436) The type 'type' in 'assembly' conflicts with the imported type 'type2' in 'assembly'. Using the type defined in 'assembly'.
     /// <summary>
-    ///The CloseBrowser recording.
+    ///The LogOut recording.
     /// </summary>
-    [TestModule("13e51bc5-44c7-4f36-89b7-c187dc391f75", ModuleType.Recording, 1)]
-    public partial class CloseBrowser : ITestModule
+    [TestModule("f297eb3c-19cb-4db4-917c-e476ae456167", ModuleType.Recording, 1)]
+    public partial class LogOut : ITestModule
     {
         /// <summary>
-        /// Holds an instance of the WebWordPressLibraryRepository repository.
+        /// Holds an instance of the global::WebWordPressLibrary.WebWordPressLibraryRepository repository.
         /// </summary>
-        public static WebWordPressLibraryRepository repo = WebWordPressLibraryRepository.Instance;
+        public static global::WebWordPressLibrary.WebWordPressLibraryRepository repo = global::WebWordPressLibrary.WebWordPressLibraryRepository.Instance;
 
-        static CloseBrowser instance = new CloseBrowser();
+        static LogOut instance = new LogOut();
 
         /// <summary>
         /// Constructs a new instance.
         /// </summary>
-        public CloseBrowser()
+        public LogOut()
         {
         }
 
         /// <summary>
         /// Gets a static instance of this recording.
         /// </summary>
-        public static CloseBrowser Instance
+        public static LogOut Instance
         {
             get { return instance; }
         }
@@ -79,9 +79,20 @@ namespace WebWordPressLibrary
 
             Init();
 
-            Report.Log(ReportLevel.Info, "Application", "Closing application containing item 'WordPress_Demo'.", repo.WordPress_Demo.SelfInfo, new RecordItemIndex(0));
-            Host.Current.CloseApplication(repo.WordPress_Demo.Self, new Duration(0));
-            Delay.Milliseconds(0);
+            Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'WordPress_Demo.Dashboard' at Center.", repo.WordPress_Demo.DashboardInfo, new RecordItemIndex(0));
+            repo.WordPress_Demo.Dashboard.Click();
+            Delay.Milliseconds(200);
+            
+            Report.Log(ReportLevel.Info, "Mouse", "Mouse None Move item 'WordPress_Demo.MyAccount1' at Center.", repo.WordPress_Demo.MyAccount1Info, new RecordItemIndex(1));
+            repo.WordPress_Demo.MyAccount1.MoveTo();
+            Delay.Milliseconds(200);
+            
+            Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'WordPress_Demo.LogOut' at Center.", repo.WordPress_Demo.LogOutInfo, new RecordItemIndex(2));
+            repo.WordPress_Demo.LogOut.Click();
+            Delay.Milliseconds(200);
+            
+            Report.Log(ReportLevel.Info, "Delay", "Waiting for 2s.", new RecordItemIndex(3));
+            Delay.Duration(2000, false);
             
         }
 

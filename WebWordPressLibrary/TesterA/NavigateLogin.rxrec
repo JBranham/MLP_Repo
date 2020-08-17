@@ -1,12 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <recordtable
-embeddedrepository="false"
+embeddedrepository="False"
 id="b4cae198-64a2-4954-82aa-3fe351ea32b7"
 mode="Global"
 rxversion="9.0">
-	<name>
-		NavigateLogin
-	</name>
 	<repeatcount>
 		1
 	</repeatcount>
@@ -24,7 +21,7 @@ rxversion="9.0">
 	</useDefaultItemLogging>
 	<codegen
 	classname="NavigateLogin"
-	namespace="WebWordPressLibrary">
+	namespace="WebWordPressLibrary.TesterA">
 	</codegen>
 	<variables>
 		<var
@@ -62,8 +59,8 @@ rxversion="9.0">
 	<repository
 	id="b68c5ae7-5d54-49e3-893c-ecd04dbce34b"
 	name="WebWordPressLibraryRepository"
-	relativepath="WebWordPressLibraryRepository.rxrep"
-	rxversion="6.0">
+	relativepath="..\WebWordPressLibraryRepository.rxrep"
+	rxversion="9.0">
 		<codegen
 		classname="WebWordPressLibraryRepository"
 		namespace="WebWordPressLibrary">

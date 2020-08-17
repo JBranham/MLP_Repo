@@ -4,9 +4,6 @@ embeddedrepository="False"
 id="1a79ad03-9369-4d42-8d3a-34a236d1ed1d"
 mode="Global"
 rxversion="9.0">
-	<name>
-		OpenBrowser
-	</name>
 	<repeatcount>
 		1
 	</repeatcount>
@@ -24,7 +21,7 @@ rxversion="9.0">
 	</useDefaultItemLogging>
 	<codegen
 	classname="OpenBrowser"
-	namespace="WebWordPressLibrary">
+	namespace="WebWordPressLibrary.Common">
 	</codegen>
 	<variables>
 		<var
@@ -41,6 +38,7 @@ rxversion="9.0">
 		clearcookies="False"
 		enabled="True"
 		incognito="False"
+		instrument="True"
 		killexisting="False"
 		maximized="True"
 		optional="False">
@@ -76,8 +74,7 @@ rxversion="9.0">
 		action="Navigate"
 		enabled="True"
 		optional="False"
-		searchpropertyid="5d5f4ad5-0324-43ef-8932-85f94ed9f60b"
-		varname="">
+		searchpropertyid="5d5f4ad5-0324-43ef-8932-85f94ed9f60b">
 			<comment>
 			</comment>
 			<bindings>
@@ -107,8 +104,8 @@ rxversion="9.0">
 	<repository
 	id="b68c5ae7-5d54-49e3-893c-ecd04dbce34b"
 	name="WebWordPressLibraryRepository"
-	relativepath="WebWordPressLibraryRepository.rxrep"
-	rxversion="7.1">
+	relativepath="..\WebWordPressLibraryRepository.rxrep"
+	rxversion="9.0">
 		<codegen
 		classname="WebWordPressLibraryRepository"
 		namespace="WebWordPressLibrary">

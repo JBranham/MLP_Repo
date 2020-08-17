@@ -20,49 +20,38 @@ using Ranorex.Core;
 using Ranorex.Core.Testing;
 using Ranorex.Core.Repository;
 
-namespace WebWordPressLibrary
+namespace WebWordPressLibrary.Common
 {
 #pragma warning disable 0436 //(CS0436) The type 'type' in 'assembly' conflicts with the imported type 'type2' in 'assembly'. Using the type defined in 'assembly'.
     /// <summary>
-    ///The GetPostURL recording.
+    ///The CloseBrowser recording.
     /// </summary>
-    [TestModule("a144ff6a-5458-489a-b361-c147c99c84cb", ModuleType.Recording, 1)]
-    public partial class GetPostURL : ITestModule
+    [TestModule("13e51bc5-44c7-4f36-89b7-c187dc391f75", ModuleType.Recording, 1)]
+    public partial class CloseBrowser : ITestModule
     {
         /// <summary>
-        /// Holds an instance of the WebWordPressLibraryRepository repository.
+        /// Holds an instance of the global::WebWordPressLibrary.WebWordPressLibraryRepository repository.
         /// </summary>
-        public static WebWordPressLibraryRepository repo = WebWordPressLibraryRepository.Instance;
+        public static global::WebWordPressLibrary.WebWordPressLibraryRepository repo = global::WebWordPressLibrary.WebWordPressLibraryRepository.Instance;
 
-        static GetPostURL instance = new GetPostURL();
+        static CloseBrowser instance = new CloseBrowser();
 
         /// <summary>
         /// Constructs a new instance.
         /// </summary>
-        public GetPostURL()
+        public CloseBrowser()
         {
-            varPostURL = "http://webtest.ranorex.org";
         }
 
         /// <summary>
         /// Gets a static instance of this recording.
         /// </summary>
-        public static GetPostURL Instance
+        public static CloseBrowser Instance
         {
             get { return instance; }
         }
 
 #region Variables
-
-        /// <summary>
-        /// Gets or sets the value of variable varPostURL.
-        /// </summary>
-        [TestVariable("b1596443-4254-4a51-8f14-21ed0b4103fa")]
-        public string varPostURL
-        {
-            get { return repo.varPostURL; }
-            set { repo.varPostURL = value; }
-        }
 
 #endregion
 
@@ -90,8 +79,8 @@ namespace WebWordPressLibrary
 
             Init();
 
-            Report.Log(ReportLevel.Info, "Get Value", "Getting attribute 'InnerText' from item 'WordPress_Demo.SamplePermalink' and assigning its value to variable 'varPostURL'.", repo.WordPress_Demo.SamplePermalinkInfo, new RecordItemIndex(0));
-            varPostURL = repo.WordPress_Demo.SamplePermalink.Element.GetAttributeValueText("InnerText");
+            Report.Log(ReportLevel.Info, "Application", "Closing application containing item 'WordPress_Demo'.", repo.WordPress_Demo.SelfInfo, new RecordItemIndex(0));
+            Host.Current.CloseApplication(repo.WordPress_Demo.Self, new Duration(0));
             Delay.Milliseconds(0);
             
         }

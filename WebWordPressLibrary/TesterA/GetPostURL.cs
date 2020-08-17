@@ -20,34 +20,34 @@ using Ranorex.Core;
 using Ranorex.Core.Testing;
 using Ranorex.Core.Repository;
 
-namespace WebWordPressLibrary
+namespace WebWordPressLibrary.TesterA
 {
 #pragma warning disable 0436 //(CS0436) The type 'type' in 'assembly' conflicts with the imported type 'type2' in 'assembly'. Using the type defined in 'assembly'.
     /// <summary>
-    ///The DeletePost recording.
+    ///The GetPostURL recording.
     /// </summary>
-    [TestModule("d3c9939f-4a9c-4c66-b0ba-0a26ae62285f", ModuleType.Recording, 1)]
-    public partial class DeletePost : ITestModule
+    [TestModule("a144ff6a-5458-489a-b361-c147c99c84cb", ModuleType.Recording, 1)]
+    public partial class GetPostURL : ITestModule
     {
         /// <summary>
-        /// Holds an instance of the WebWordPressLibraryRepository repository.
+        /// Holds an instance of the global::WebWordPressLibrary.WebWordPressLibraryRepository repository.
         /// </summary>
-        public static WebWordPressLibraryRepository repo = WebWordPressLibraryRepository.Instance;
+        public static global::WebWordPressLibrary.WebWordPressLibraryRepository repo = global::WebWordPressLibrary.WebWordPressLibraryRepository.Instance;
 
-        static DeletePost instance = new DeletePost();
+        static GetPostURL instance = new GetPostURL();
 
         /// <summary>
         /// Constructs a new instance.
         /// </summary>
-        public DeletePost()
+        public GetPostURL()
         {
-            varPostURL = "http://webtest.ranorex.org/";
+            varPostURL = "http://webtest.ranorex.org";
         }
 
         /// <summary>
         /// Gets a static instance of this recording.
         /// </summary>
-        public static DeletePost Instance
+        public static GetPostURL Instance
         {
             get { return instance; }
         }
@@ -57,7 +57,7 @@ namespace WebWordPressLibrary
         /// <summary>
         /// Gets or sets the value of variable varPostURL.
         /// </summary>
-        [TestVariable("4bc16de1-50a7-44d5-afb2-6d1c869096bc")]
+        [TestVariable("b1596443-4254-4a51-8f14-21ed0b4103fa")]
         public string varPostURL
         {
             get { return repo.varPostURL; }
@@ -90,24 +90,9 @@ namespace WebWordPressLibrary
 
             Init();
 
-            Report.Log(ReportLevel.Info, "Invoke action", "Invoking Navigate(variable $varPostURL) on item 'WordPress_Demo'.", repo.WordPress_Demo.SelfInfo, new RecordItemIndex(0));
-            repo.WordPress_Demo.Self.Navigate(varPostURL);
+            Report.Log(ReportLevel.Info, "Get Value", "Getting attribute 'InnerText' from item 'WordPress_Demo.SamplePermalink' and assigning its value to variable 'varPostURL'.", repo.WordPress_Demo.SamplePermalinkInfo, new RecordItemIndex(0));
+            varPostURL = repo.WordPress_Demo.SamplePermalink.Element.GetAttributeValueText("InnerText");
             Delay.Milliseconds(0);
-            
-            Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'WordPress_Demo.RecentPost' at Center.", repo.WordPress_Demo.RecentPostInfo, new RecordItemIndex(1));
-            repo.WordPress_Demo.RecentPost.Click();
-            Delay.Milliseconds(200);
-            
-            Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'WordPress_Demo.EditPost' at Center.", repo.WordPress_Demo.EditPostInfo, new RecordItemIndex(2));
-            repo.WordPress_Demo.EditPost.Click();
-            Delay.Milliseconds(200);
-            
-            Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'WordPress_Demo.MoveToTrash' at Center.", repo.WordPress_Demo.MoveToTrashInfo, new RecordItemIndex(3));
-            repo.WordPress_Demo.MoveToTrash.Click();
-            Delay.Milliseconds(200);
-            
-            Report.Log(ReportLevel.Info, "Delay", "Waiting for 2s.", new RecordItemIndex(4));
-            Delay.Duration(2000, false);
             
         }
 
