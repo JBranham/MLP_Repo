@@ -1,0 +1,69 @@
+﻿<repository
+id="4ec24171-7d2d-47a0-80f4-9f41b726797f"
+name="TesterA">
+	<codegen
+	classname="TesterA"
+	namespace="WebWordPressLibrary.TesterA">
+	</codegen>
+	<rootfolder
+	capname="host"
+	id="f31e89c1-60fb-4184-906b-b2902dc8f60e"
+	isrooted="True"
+	name="Root"
+	searchtimeout="0ms"
+	usecache="False">
+		<appfolder
+		capname="webdocument"
+		id="b9c93ca3-701e-4439-bcb5-49663ec123e0"
+		isrooted="True"
+		name="WordPress_Demo"
+		refimgid="8baf604a-fc00-46d2-b7ea-c90d2a8fbff3"
+		searchtimeout="30000ms"
+		usecache="False">
+			<item
+			capname="atag"
+			id="4a632421-1c26-4572-85b0-2e52270f3928"
+			name="RecentPost"
+			refimgid="da4b35f2-6e6a-47d7-8720-a44eb62d1f27"
+			searchtimeout="30000ms">
+				/dom[@domain='webtest.ranorex.org']//li[#'recent-posts-2']//a[@href=$varPostURL]
+			</item>
+			<item
+			addcaps="unknown,webelement,divtag"
+			capname="litag"
+			id="c4a1f763-d69f-4c41-a31a-e481faf9bd6a"
+			name="Dashboard"
+			refimgid="1f2edff2-25cf-4bec-ba96-3527d8a6a06a"
+			searchtimeout="30000ms">
+				/dom[@domain='webtest.ranorex.org']//li[#'menu-dashboard']
+			</item>
+			<basepath>
+				/dom[@domain='webtest.ranorex.org']
+			</basepath>
+			<icon>
+				iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAGHRFWHRTb2Z0d2FyZQBQYWlu
+dC5ORVQgdjMuMzE3g3eGAAACKklEQVQ4T43R20vTcRjHcS/6G4Kgyy6KKKjwJogIDBJjIBUt2YVD
+yoGVmWUWzozMC92YaWqeSE1s0dThOtjBWUlKkMxDudXU1lCU6XSepzu82+/nvNrX6APP1e95Xt/f
+9/vEbaWh7TO1xi4qmjspfWKhuLqN++VGtLqn5BTVk1lQRbRVHGn4X8nTNclYtD020smBYDjaHhsJ
+cIxPbY8YIr+9viEGgqGwDBxLvixXfGJaLCLdedUfCwRDyPDKWoiF5SAuT0AMSA+2BXhXZqmydFBu
+bkfbmkFpayPOyQW8CwHs7jUxIN1NOkEa1llLGA7bsYX7KbTd4GiuiUuVbxhyzTMwuiwGpFX5lkLU
+dFjJ+55Mw5yGGpsRtX6Kk2Ue9jWewtBRx9eRJTEg7XnWF+TBo25SzUmo3inINLjIKoPD1QXsbNvN
+6fxr9Az5xIDm9kOm5gLce+xEW/aF1BYlCmshSr2PMxm32HV3B8ez0/jQPycG1NklTMxsUGUaQaMD
+lc7EIcse4vXJJF18xX7FVUpq6njd5xUDKVeKcE2v4xib52bxIAdza9mbf4CE9OscUZo5q3nO295p
+zD0zYuBcegHOCb+8KpvDi6G5hRMX8klIKaei6b083PdjCdNHjxhQqO/gcPsj77CB27PO2OQa9j+r
+8tq+/VyODC/yaXBxeyBRlUPv8Dzt3eO86PrNs85Rml7+ot7soLrVTqVpsypMTjGQcD5L/vC/tTkV
+F/cXNG0rDkAnVtkAAAAASUVORK5CYII=
+			</icon>
+		</appfolder>
+		<basepath>
+		</basepath>
+	</rootfolder>
+	<variables>
+		<var
+		id="342c4b3f-d50c-4ee2-a1e3-c123ce7d1e10"
+		name="varPostURL">
+			http://webtest.ranorex.org/
+		</var>
+	</variables>
+</repository>

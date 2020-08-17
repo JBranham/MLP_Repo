@@ -30,9 +30,9 @@ namespace WebWordPressLibrary.TesterA
     public partial class NavigateLogin : ITestModule
     {
         /// <summary>
-        /// Holds an instance of the global::WebWordPressLibrary.WebWordPressLibraryRepository repository.
+        /// Holds an instance of the TesterA repository.
         /// </summary>
-        public static global::WebWordPressLibrary.WebWordPressLibraryRepository repo = global::WebWordPressLibrary.WebWordPressLibraryRepository.Instance;
+        public static TesterA repo = TesterA.Instance;
 
         static NavigateLogin instance = new NavigateLogin();
 

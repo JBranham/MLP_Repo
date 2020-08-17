@@ -117,6 +117,13 @@
     <Compile Include="Program.cs">
       <id>9e9a88ea-b3bf-4f43-9317-cd363fe37ad1</id>
     </Compile>
+    <Content Include="TesterA.rxtst">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <id>a3add175-07a3-4457-8c98-c1e597acb19a</id>
+    </Content>
+    <Content Include="TesterB.rxtst">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="app.config">
       <id>da04de6d-e890-4124-aef3-a1ee7b85192e</id>
     </None>
@@ -127,6 +134,9 @@
     <Content Include="WordPressSample.rxtst">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <id>ed620e54-1d41-4b04-b4b6-5f3011ccf52b</id>
+    </Content>
+    <Content Include="WordPressSample.rxsqc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>

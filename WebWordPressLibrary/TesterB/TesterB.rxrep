@@ -1,0 +1,20 @@
+﻿<repository
+id="b15401f1-cb1d-4190-9b3a-643923c52501"
+name="TesterB">
+	<codegen
+	classname="TesterB"
+	namespace="WebWordPressLibrary.TesterB">
+	</codegen>
+	<rootfolder
+	capname="host"
+	id="e8812a4e-0911-4a0d-8ab1-1d5092158d75"
+	isrooted="True"
+	name="Root"
+	searchtimeout="0ms"
+	usecache="False">
+		<basepath>
+		</basepath>
+	</rootfolder>
+	<variables>
+	</variables>
+</repository>

@@ -45,7 +45,7 @@ rxversion="9.0">
 				</binding>
 			</bindings>
 			<info
-			id="1155ad1c-67f9-47e2-b216-3b27bda1db0b"
+			id="b9c93ca3-701e-4439-bcb5-49663ec123e0"
 			sourcename="RepositoryEditor">
 				<path>
 					/dom[@domain='webtest.ranorex.org']
@@ -57,16 +57,15 @@ rxversion="9.0">
 		</setvaluerecorditem>
 	</recorditems>
 	<repository
-	id="b68c5ae7-5d54-49e3-893c-ecd04dbce34b"
-	name="WebWordPressLibraryRepository"
-	relativepath="..\WebWordPressLibraryRepository.rxrep"
-	rxversion="9.0">
+	id="4ec24171-7d2d-47a0-80f4-9f41b726797f"
+	name="TesterA"
+	relativepath="TesterA.rxrep">
 		<codegen
-		classname="WebWordPressLibraryRepository"
-		namespace="WebWordPressLibrary">
+		classname="TesterA"
+		namespace="WebWordPressLibrary.TesterA">
 		</codegen>
 		<rootfolder
-		id="5251cef1-231f-4e1a-b0bd-41e54b4b13f8"
+		id="f31e89c1-60fb-4184-906b-b2902dc8f60e"
 		name="_rootdummy_">
 		</rootfolder>
 	</repository>

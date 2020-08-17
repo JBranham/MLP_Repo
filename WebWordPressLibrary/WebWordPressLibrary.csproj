@@ -194,6 +194,12 @@
       <id>0a16c484-a56f-4c8b-ad39-018a0dba9189</id>
       <BoundTo>8baabd41-c50b-47b5-88fe-76d3231a49f0</BoundTo>
     </Compile>
+    <Compile Include="TesterA\TesterA.cs">
+      <BoundTo>ce61b945-f463-4c1b-a4f0-93b4e63bb84b</BoundTo>
+      <DependentUpon>TesterA.rxrep</DependentUpon>
+      <RepositoryCode>true</RepositoryCode>
+      <id>b636df6c-5d24-48e2-b603-ddcfc6a55bb5</id>
+    </Compile>
     <Compile Include="TesterB\NavigateNewPost.cs">
       <DependentUpon>NavigateNewPost.rxrec</DependentUpon>
       <RecorderCode>true</RecorderCode>
@@ -223,6 +229,12 @@
     </Compile>
     <Compile Include="TesterB\StopWatchingPopup.cs">
       <id>42f2e456-074f-4483-8382-0221e65508e2</id>
+    </Compile>
+    <Compile Include="TesterB\TesterB.cs">
+      <BoundTo>02d1dc08-5123-447d-8919-ab9843b9859d</BoundTo>
+      <DependentUpon>TesterB.rxrep</DependentUpon>
+      <RepositoryCode>true</RepositoryCode>
+      <id>e249e9ea-c281-40b7-a206-b7ebb6bd00e1</id>
     </Compile>
     <Compile Include="TesterB\ValidatePost.cs">
       <DependentUpon>ValidatePost.rxrec</DependentUpon>
@@ -268,8 +280,19 @@
     </None>
     <None Include="TesterA\NavigateLogin.rxrec">
       <id>8baabd41-c50b-47b5-88fe-76d3231a49f0</id>
-      <BoundTo>4a85ea7f-e62c-4c64-a503-d9a41150da22</BoundTo>
       <recordtableid>b4cae198-64a2-4954-82aa-3fe351ea32b7</recordtableid>
+      <BoundTo>ce61b945-f463-4c1b-a4f0-93b4e63bb84b</BoundTo>
+    </None>
+    <None Include="TesterA\TesterA.rximg">
+      <BoundTo>ce61b945-f463-4c1b-a4f0-93b4e63bb84b</BoundTo>
+      <DependentUpon>TesterA.rxrep</DependentUpon>
+      <imageblob>true</imageblob>
+      <id>8b5d8de1-a9ac-4e7b-8064-21b8718bb38e</id>
+    </None>
+    <None Include="TesterA\TesterA.rxrep">
+      <id>ce61b945-f463-4c1b-a4f0-93b4e63bb84b</id>
+      <repoid>4ec24171-7d2d-47a0-80f4-9f41b726797f</repoid>
+      <reporootid>f31e89c1-60fb-4184-906b-b2902dc8f60e</reporootid>
     </None>
     <None Include="TesterB\NavigateNewPost.rxrec">
       <id>16353e3b-6155-4245-9cbb-33048da4f04f</id>
@@ -280,6 +303,17 @@
       <id>bddb5c01-6614-4c10-86c7-2a72ca04bb09</id>
       <BoundTo>4a85ea7f-e62c-4c64-a503-d9a41150da22</BoundTo>
       <recordtableid>5c0438e0-4aa8-4cce-9d0d-0adda576c6a7</recordtableid>
+    </None>
+    <None Include="TesterB\TesterB.rximg">
+      <BoundTo>02d1dc08-5123-447d-8919-ab9843b9859d</BoundTo>
+      <DependentUpon>TesterB.rxrep</DependentUpon>
+      <imageblob>true</imageblob>
+      <id>bcca80f6-99ab-4635-8cf7-59186e4d1ca9</id>
+    </None>
+    <None Include="TesterB\TesterB.rxrep">
+      <id>02d1dc08-5123-447d-8919-ab9843b9859d</id>
+      <repoid>b15401f1-cb1d-4190-9b3a-643923c52501</repoid>
+      <reporootid>e8812a4e-0911-4a0d-8ab1-1d5092158d75</reporootid>
     </None>
     <None Include="TesterB\ValidatePost.rxrec">
       <BoundTo>4a85ea7f-e62c-4c64-a503-d9a41150da22</BoundTo>
