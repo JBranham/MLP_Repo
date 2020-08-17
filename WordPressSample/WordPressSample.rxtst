@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <testsuitedoc
 rxversion="9.0">
 	<testsuiteentryhierarchy>
@@ -63,7 +63,7 @@ rxversion="9.0">
 			</testmodule>
 			<testcase
 			id="3cad3cc9-b1a3-4575-bca1-f1d629f157b5"
-			name="AddBlogPost">
+			name="TC1">
 				<description>
 					<![CDATA[Test Case: Login to Wordpress, publish a post, validate 
 the post and delete it again afterwards]]>
@@ -259,8 +259,7 @@ the post and delete it again afterwards]]>
 			reportenabled="True"
 			reportfilename="%S_%Y%M%D_%T.rxlog"
 			reporttemplatefolder=""
-			reportwriteinterval="30000ms"
-			showinvisiblechars="True">
+			reportwriteinterval="30000ms">
 			</testsuite>
 			<teardown
 			id="dac29560-9b1f-4e6d-845b-d842b9f3f012"
@@ -304,7 +303,7 @@ the post and delete it again afterwards]]>
 					</setup>
 					<testcase
 					id="3cad3cc9-b1a3-4575-bca1-f1d629f157b5"
-					name="AddBlogPost">
+					name="TC1">
 						<setup
 						id="aa022d4f-0f71-4508-9278-ca32ac620e43"
 						name="setup">
@@ -365,12 +364,12 @@ the post and delete it again afterwards]]>
 					<teardown
 					id="dac29560-9b1f-4e6d-845b-d842b9f3f012"
 					name="teardown">
-							<testmodule
-							id="d1a47119-f69b-4fd1-9810-5a927c09da35"
-							name="StopWatchingPopup">
-							</testmodule>
-						</teardown>
-					</testcase>
+						<testmodule
+						id="d1a47119-f69b-4fd1-9810-5a927c09da35"
+						name="StopWatchingPopup">
+						</testmodule>
+					</teardown>
+				</testcase>
 			</testsuite>
 		</childhierarchy>
 	</testsuiteentryhierarchy>
